@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rudraksh Chand - Researcher & Academic</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; overflow-x: hidden; }
+    #particles-js { position: fixed; width: 50%; height: 100%; left: 0; top: 0; background: #1a1a1a; z-index: 0; }
+    .container { display: flex; min-height: 100vh; }
+    .left-panel { position: fixed; width: 50%; height: 100vh; background: #1a1a1a; z-index: 1; }
+    .right-panel { margin-left: 50%; width: 50%; min-height: 100vh; background: #f5f5f5; padding: 40px 60px; position: relative; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
+    .logo { font-size: 14px; letter-spacing: 2px; font-weight: 500; }
+    .menu-toggle { background: none; border: none; font-size: 24px; cursor: pointer; }
+    .hero h2 { font-size: 12px; letter-spacing: 2px; font-weight: 600; margin-bottom: 20px; color: #666; }
+    .hero p { font-size: 18px; line-height: 1.6; color: #333; max-width: 90%; }
+    .latest-work { margin-top: 80px; }
+    .latest-work h3 { font-size: 12px; letter-spacing: 2px; font-weight: 600; margin-bottom: 30px; color: #666; }
+    .work-grid { display: flex; flex-direction: column; gap: 20px; }
+    .work-item { padding: 20px 0; border-top: 1px solid #ddd; display: grid; grid-template-columns: 1fr auto auto; gap: 20px; align-items: center; cursor: pointer; transition: all 0.3s; }
+    .work-item:hover { padding-left: 10px; }
+    .work-item h4 { font-size: 16px; font-weight: 500; }
+    .work-item .date, .work-item .category { font-size: 14px; color: #999; }
+    @media (max-width: 968px) { #particles-js { width: 100%; } .left-panel { display: none; } .right-panel { margin-left: 0; width: 100%; } }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="left-panel"></div>
+    <div class="right-panel">
+      <header>
+        <h1 class="logo">RUDRAKSH CHAND</h1>
+        <button class="menu-toggle">⌄</button>
+      </header>
+      <main>
+        <section class="hero">
+          <h2>WELCOME TO NEW PERSPECTIVES</h2>
+          <p>A researcher and academic specializing in sociology, anthropology, and South Asian studies, exploring themes of social justice, cultural documentation, and digital archiving.</p>
+        </section>
+        <section class="latest-work">
+          <h3>LATEST WORK</h3>
+          <div class="work-grid">
+            <div class="work-item">
+              <h4>Dalit, Bahujan, Adivasi Studies</h4>
+              <span class="date">2025</span>
+              <span class="category">Research</span>
+            </div>
+            <div class="work-item">
+              <h4>Digital Archiving Projects</h4>
+              <span class="date">2025</span>
+              <span class="category">Documentation</span>
+            </div>
+            <div class="work-item">
+              <h4>Photography Curation</h4>
+              <span class="date">2024</span>
+              <span class="category">Art</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: { number: { value: 80, density: { enable: true, value_area: 800 } }, color: { value: '#ffffff' }, shape: { type: 'circle' }, opacity: { value: 0.5, random: false }, size: { value: 3, random: true }, line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 }, move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false } },
+      interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true }, modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } } },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>

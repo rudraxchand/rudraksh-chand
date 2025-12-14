@@ -29,7 +29,123 @@
         
         .container { display: flex; min-height: 100vh; }
         
-        .left-panel { width: 50%; height: 100vh; position: relative; background: transparent; }
+        .left-panel { width: 50%; height: 100vh; position: relative; background: transparent; overflow: hidden; }
+        
+        /* Floating cards */
+        .floating-card {
+          position: absolute;
+          background: rgba(230, 220, 200, 0.95);
+          padding: 25px;
+          border-radius: 4px;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+          z-index: 10;
+          animation: float 20s ease-in-out infinite;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+        
+        .floating-card:hover {
+          transform: scale(1.05) !important;
+          box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+        }
+        
+        .floating-card.card-1 {
+          top: 8%;
+          left: 15%;
+          width: 220px;
+          animation-delay: 0s;
+        }
+        
+        .floating-card.card-2 {
+          top: 45%;
+          left: 55%;
+          width: 260px;
+          animation-delay: -5s;
+        }
+        
+        .floating-card.card-3 {
+          top: 65%;
+          left: 20%;
+          width: 240px;
+          animation-delay: -10s;
+        }
+        
+        .floating-card.info-card {
+          top: 25%;
+          left: 8%;
+          width: 200px;
+          background: rgba(220, 200, 180, 0.95);
+          animation-delay: -7s;
+        }
+        
+        .card-image {
+          width: 100%;
+          height: 180px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 4px;
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 14px;
+          font-weight: 600;
+          text-align: center;
+          padding: 20px;
+        }
+        
+        .card-image.research {
+          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .card-image.archiving {
+          background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .card-image.photography {
+          background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        
+        .card-label {
+          font-size: 11px;
+          color: #666;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        
+        .card-label::before {
+          content: '';
+          width: 6px;
+          height: 6px;
+          border: 1px solid #666;
+          border-radius: 50%;
+          display: inline-block;
+        }
+        
+        .info-card h3 {
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom: 10px;
+          color: #333;
+        }
+        
+        .info-card .tag {
+          display: inline-block;
+          background: rgba(0,0,0,0.08);
+          padding: 4px 12px;
+          border-radius: 12px;
+          font-size: 11px;
+          margin-top: 8px;
+          color: #666;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          25% { transform: translate(10px, -15px) rotate(1deg); }
+          50% { transform: translate(-8px, 10px) rotate(-1deg); }
+          75% { transform: translate(12px, 8px) rotate(0.5deg); }
+        }
         
         .right-panel { width: 50%; min-height: 100vh; background: #f5f5f5; padding: 60px 80px; overflow-y: auto; position: relative; }
         
@@ -47,7 +163,6 @@
         
         .hero p { font-size: 20px; line-height: 1.7; color: #333; margin-bottom: 50px; animation: fadeIn 1s ease 0.2s backwards; }
         
-        /* Latest Work Section */
         .latest-work { margin-top: 100px; }
         
         .latest-work h3 { font-size: 14px; letter-spacing: 2px; font-weight: 700; margin-bottom: 40px; color: #666; }
@@ -67,9 +182,7 @@
           transition: left 0.6s ease;
         }
         
-        .work-item:hover::before {
-          left: 100%;
-        }
+        .work-item:hover::before { left: 100%; }
         
         .work-item:hover { padding-left: 20px; background: rgba(0,0,0,0.02); }
         
@@ -81,24 +194,51 @@
         
         .work-item .category { font-size: 15px; color: #666; }
         
-        /* Animations */
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Responsive */
         @media (max-width: 968px) {
           #particles-js { width: 100%; } 
           .left-panel { display: none; } 
           .right-panel { width: 100%; padding: 40px 30px; }
+          .floating-card { display: none; }
         }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
     <div class="container">
-        <div class="left-panel"></div>
+        <div class="left-panel">
+            <div class="floating-card card-1">
+                <div class="card-image research">
+                    Dalit, Bahujan & Adivasi Studies
+                </div>
+                <div class="card-label">Research</div>
+            </div>
+            
+            <div class="floating-card card-2">
+                <div class="card-image archiving">
+                    Digital Archiving Projects
+                </div>
+                <div class="card-label">Documentation</div>
+            </div>
+            
+            <div class="floating-card card-3">
+                <div class="card-image photography">
+                    Photography Curation
+                </div>
+                <div class="card-label">Art & Culture</div>
+            </div>
+            
+            <div class="floating-card info-card">
+                <h3>Research Focus</h3>
+                <p style="font-size: 13px; color: #555; line-height: 1.5;">Exploring social justice and cultural documentation</p>
+                <div class="tag">2025 Projects</div>
+            </div>
+        </div>
+        
         <div class="right-panel">
             <header>
                 <h1 class="logo">RUDRAKSH CHAND</h1>
@@ -173,7 +313,6 @@
           retina_detect: true
         });
         
-        // Add staggered animation to work items
         document.querySelectorAll('.work-item').forEach((item, index) => {
           item.style.animation = `fadeIn 0.8s ease ${index * 0.1}s backwards`;
         });
